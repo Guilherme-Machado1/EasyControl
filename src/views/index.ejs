@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="gradient">
+  <header>
+    <div class="container-fluid">
+        <h3 class="text-center">EasyControl - Controle de Estoque</h3>
+    </div>
+</header>
+  <section class="mt-5 centered">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <p>Faça o login</p>
+            </div>
+            <div class="card-body">
+              <form action="/login" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div class="form-group my-4">
+                  <label for="" class="text-center mb-2">Nome de usuário</label>
+                  <input name="usuario" type="text" class="form-control" placeholder="Nome de usuário" >
+               </div>
+               <div class="form-group">
+                <label class="text-center mb-2">Senha</label>
+                  <input name="senha" type="password" class="form-control" placeholder="Senha" >
+                </div>
+                <button class="btn my-2 btn-md btn-info" type="submit">Ir para a página inicial</button><br>
+                <small class="form-text text-danger"> *Usuário ou senha incorretos </small>
+                <p class="mt-3">Não tem acesso? Contate o administrador</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+<!-- <section class="container">
+  <h1></h1>
+
+  <form action="/" method="post">
+    
+    <label>Cliente</label>
+    <input type="text" name="cliente">
+    <button>Submit</button>
+  </form>
+</section> -->
+
+<%- include('includes/footer'); %>
