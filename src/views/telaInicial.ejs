@@ -4,8 +4,9 @@
     <div class="container text-center">
         <div class="row">
             <div class="col-12 my-5">
+                <%- include('includes/messages'); %>
                 <label  class="text-warning" style="font-size: 2em;">Usuário: &nbsp;</label>
-                <span class="text-warning"></span>
+                <span class="text-warning" style="font-size: 2em"><%= user.usuario %></span>
                 <i class="text-warning far fa-user fa-2x"></i>
             </div>
             <div class="d-grid gap-2 my-5">
@@ -13,38 +14,11 @@
                 <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="#" style="color: white; text-decoration: none;">Adicionar Itens<i class="ms-3 fas fa-plus-square"></i></a></button>
                 <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="#" style="color: white; text-decoration: none;">Remover Itens<i class="ms-3 fas fa-minus-square"></i></a></button>
                 <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="#" style="color: white; text-decoration: none;">Listar Todos Itens<i class="ms-3 fas fa-bars"></i></a></button>
+                <% if(user.usuario === 'Admin') {%> 
                 <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="#" style="color: white; text-decoration: none;">Movimentações Feitas<i class="ms-3 fas fa-sync-alt"></i></a></button>
-
+                <% } %>
             </div>
         </div>
     </div>
 </setion>
-<!-- <section class="mt-2">
-    <div class="container-fluid text-center">
-        <div class="row">
-            <div class="col-12">
-                <div class="">
-                <label class="text-warning" style="font-size: 2em;">Usuário: &nbsp;</label>
-                <span class="text-warning" style="font-size: 2em;"> </span>
-                <i class="text-warning far fa-user fa-2x"></i>
-                </div>
-                <div class="mt-3">
-                    <button type="submit" class="btn-block btn-primary" style="font-size:xx-large;"><a href="TelaInicial.php" style="color: white; text-decoration: none;">Cadastrar Novo Item</a><i class="ml-2 fas fa-plus-square"></i></button>
-                </div>
-                <div class="mt-5">
-                    <button type="submit" class="btn-block btn-primary" style="font-size:xx-large;"><a href="TelaInicial.php" style="color: white; text-decoration: none;">Adicionar Itens</a><i class="ml-2 fas fa-plus-square"></i></button>
-                </div>
-                <div class="mt-5">
-                    <button type="submit"  class="btn-block btn-primary" style="font-size:xx-large;"><a href="TelaRemove.php" style="color: white; text-decoration: none;">Remover Itens</a><i class="ml-2 fas fa-minus-square"></i></button>
-                </div>
-                <div class="mt-5">
-                <button type="submit"  class="btn-block btn-primary" style="font-size:xx-large;"><a href="TelaLista.php" style="color: white; text-decoration: none;">Listar Todos Itens</a><i class="ml-2 fas fa-bars"></i></button>
-                </div>
-                <div class="mt-5 mb-2">
-                    <button type="submit" class="btn btn-large btn-block btn-primary" style="font-size:xx-large;"><a href="registros.php" style="color: white; text-decoration: none;">Movimentações Feitas</a><i class=" ml-2 fas fa-sync-alt"></i></button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 <%- include('includes/footer'); %>
