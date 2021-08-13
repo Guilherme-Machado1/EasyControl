@@ -15,15 +15,18 @@ class Home {
     }
 
      async login(){
-      this.cleanUp();
-      if(this.errors.length > 0) return;
-        this.user = await HomeModel.findOne({senha: this.body.senha, usuario: this.body.usuario});
-        if(this.user === null){
-          this.errors.push('Senha ou usuário incorretas');
-          console.log(this.user);
-          return;
-        }
-        console.log(this.user);
+       try {
+        this.cleanUp();
+        if(this.errors.length > 0) return;
+          this.user = await HomeModel.findOne({usuario: this.body.usuario, senha: this.body.senha});
+          if(!this.user){
+            this.errors.push('Senha ou usuário incorretas');
+            return;
+          }
+       } catch (error) {
+         throw new Error(error);
+       }
+      
     }
 
 
