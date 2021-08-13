@@ -7,7 +7,7 @@ const contatoController = require('./src/controllers/contatoController');
 route.get('/', homeController.paginaInicial);
 route.post('/login', homeController.login);
 route.get('/login/logoff', homeController.logoff);//finaliza a sessão
-
+route.get('/telaInicial', homeController.exibeTela);
 // Rotas de contato
 route.get('/contato', contatoController.paginaInicial);
 
