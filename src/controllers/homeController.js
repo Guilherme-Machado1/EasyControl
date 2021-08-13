@@ -18,30 +18,33 @@ exports.login = async (req, res) => {
       req.session.save(function(){
       return res.redirect('back');
       });
+      return;
     }
   
     if(!login.user){
-      req.flash('errors', 'algo deu errado');
+      req.flash('errors', login.errors);
       req.session.save(function(){
       return res.redirect('back');
       });
+      return;
     }
   
-
-    req.flash('success', 'O login foi feito com sucesso');
-    req.session.user = login.user;
-    req.session.save(function(){
-      return res.render('telaInicial');
-    });
-  
-    
+      req.flash('success', 'O login foi feito com sucesso');
+      req.session.user = login.user;
+      req.session.save(function(){
+      return res.redirect('/telaInicial');
+      });
   }catch (error) {
-    console.log(error);
-    res.redirect("404");
+    throw new Error(error);
   }
     
   
 }
+
+exports.exibeTela = (req, res) => {
+  res.render('telaInicial');
+  return;
+};
 
 exports.logoff = (req, res) => {
   req.session.destroy();
