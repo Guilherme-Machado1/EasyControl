@@ -90,7 +90,7 @@ exports.getList = async (req, res) => {
       res.render('404');
     }
 }
-
+//Exclui o produto do banco
 exports.excluirProduto = async (req, res) => {
   try {
     if(!req.params.id) return res.render('error');

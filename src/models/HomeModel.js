@@ -13,7 +13,7 @@ class Home {
       this.errors = [];
       this.user = null;
     }
-
+ 
      async login(){
        try {
         this.cleanUp();

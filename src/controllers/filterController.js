@@ -1,7 +1,7 @@
 const session = require('express-session');
 const Cadastro = require('../models/CadastroModel');
 
-//Resgata a Lista de produtos do banco
+//Resgata a Lista de cerveja do banco
 exports.getListBeer = async (req, res) => {
     try {
       const listBeer = await Cadastro.getListBeer();
@@ -11,7 +11,7 @@ exports.getListBeer = async (req, res) => {
       res.render('404');
     }
 }
-
+//Resgata a Lista de refrigerantes do banco
 exports.getListSoda = async (req, res) => {
   try {
     const listSoda = await Cadastro.getListSoda();
@@ -21,7 +21,7 @@ exports.getListSoda = async (req, res) => {
     res.render('404');
   }
 }
-
+//Resgata a Lista de doces do banco
 exports.getListCandy = async (req, res) => {
   try {
     const listCandy = await Cadastro.getListCandy();
@@ -31,7 +31,7 @@ exports.getListCandy = async (req, res) => {
     res.render('404');
   }
 }
-
+//Resgata a Lista de bebidas do banco
 exports.getListDrink = async (req, res) => {
   try {
     const listDrink = await Cadastro.getListDrink();

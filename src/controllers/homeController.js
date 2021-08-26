@@ -1,11 +1,12 @@
 const session = require('express-session');
 const Home = require('../models/HomeModel');
+// renderiza a pagina inicial da home controller
 exports.paginaInicial = (req, res) => {
   if(req.session.user) return res.render('TelaInicial');
   res.render('index');
   return;
 };
-
+// realiza o login
 exports.login = async (req, res) => {
   try {
     const login = new Home(req.body);
@@ -39,12 +40,12 @@ exports.login = async (req, res) => {
     
   
 }
-
+// exibe a tela Inicial
 exports.exibeTela = (req, res) => {
   res.render('telaInicial');
   return;
 };
-
+//realiza o logoff
 exports.logoff = (req, res) => {
   req.session.destroy();
   return res.redirect('/');

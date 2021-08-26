@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const { container } = require('webpack');
 
 const CadastroSchema = new mongoose.Schema({
   nome_produto: { type: String, required: true },
