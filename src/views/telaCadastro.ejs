@@ -1,0 +1,39 @@
+<%- include('includes/head'); %>
+
+
+<section class="mt-2">
+    <div class="container-fluid text-center">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 my-5 d-flex flex-column  bd-highlight" style="width: 500px;">
+                <h1  class="bd-highlight">Cadastrar novo Produto</h1>
+                <form action="/cadastrarItem/cadastro" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <div class="form-group my-3"> 
+                        <label class="labelCadastro" for="">Nome do produto</label>
+                        <input required name="nome_produto" type="text" class="form-control my-1">
+                    </div>
+                    <div class="form-group my-3"> 
+                        <label class="labelCadastro">Quantidade do produto</label>
+                        <input required name="quantidade" type="number" class="form-control my-1">
+                    </div>
+                    <div class="form-group my-3"> 
+                        <label class="labelCadastro">Preço do produto</label>
+                        <input name="preco" type="number" class="form-control my-1">
+                    </div>
+                    <div class="form-group my-3"> 
+                        <label class="labelCadastro">Categoria do produto</label>
+                        <input name="categoria" type="text" class="form-control my-1">
+                    </div>
+                    <button type="submit" class="btn mb-3 btn-primary">Cadastrar produto</button>
+                    <%- include('includes/messages'); %>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<%- include('includes/footer'); %>

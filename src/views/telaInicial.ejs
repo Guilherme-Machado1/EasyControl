@@ -1,6 +1,6 @@
 <%- include('includes/head'); %>
 
-<setion class="mt-2">
+<section class="mt-2">
     <div class="container text-center">
         <div class="row">
             <div class="col-12 my-5">
@@ -10,15 +10,15 @@
                 <i class="text-warning far fa-user fa-2x"></i>
             </div>
             <div class="d-grid gap-2 my-5">
-                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="#" style="color: white; text-decoration: none;">Cadastrar um novo item<i class="ms-3 fas fa-plus-square"></i></a></button>
-                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="#" style="color: white; text-decoration: none;">Adicionar Itens<i class="ms-3 fas fa-plus-square"></i></a></button>
-                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="#" style="color: white; text-decoration: none;">Remover Itens<i class="ms-3 fas fa-minus-square"></i></a></button>
-                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="#" style="color: white; text-decoration: none;">Listar Todos Itens<i class="ms-3 fas fa-bars"></i></a></button>
+                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="/CadastrarItem" style="color: white; text-decoration: none;">Cadastrar novo item<i class="ms-3 fas fa-plus-square"></i></a></button>
+                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="/AdicionarItem" style="color: white; text-decoration: none;">Adicionar Itens<i class="ms-3 fas fa-plus-square"></i></a></button>
+                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="/RemoverItem" style="color: white; text-decoration: none;">Remover Itens<i class="ms-3 fas fa-minus-square"></i></a></button>
+                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="/ListarItem" style="color: white; text-decoration: none;">Listar Todos Itens<i class="ms-3 fas fa-bars"></i></a></button>
                 <% if(user.usuario === 'Admin') {%> 
-                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="#" style="color: white; text-decoration: none;">Movimentações Feitas<i class="ms-3 fas fa-sync-alt"></i></a></button>
+                <button class="btn btn-primary my-2" style="font-size:xx-large;"><a href="/cadastrarUsuario" style="color: white; text-decoration: none;">Cadastrar novo usuário<i class="ms-3 fas fa-sync-alt"></i></a></button>
                 <% } %>
             </div>
         </div>
     </div>
-</setion>
+</section>
 <%- include('includes/footer'); %>

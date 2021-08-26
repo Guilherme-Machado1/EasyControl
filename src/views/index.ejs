@@ -26,16 +26,17 @@
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <div class="form-group my-4">
                   <label for="" class="text-center mb-2">Nome de usuário</label>
-                  <input name="usuario" type="text" class="form-control" placeholder="Nome de usuário" >
+                  <input name="usuario" type="text" class="form-control" placeholder="Nome de usuário" required>
                </div>
                <div class="form-group">
                 <label class="text-center mb-2">Senha</label>
-                  <input name="senha" type="password" class="form-control" placeholder="Senha" >
+                  <input name="senha" type="password" class="form-control" placeholder="Senha" required>
                 </div>
                 <button class="btn my-2 btn-md btn-info" type="submit">Ir para a página inicial</button><br>
                 <%- include('includes/messages'); %>
                 <!-- <small class="form-text text-danger"> *Usuário ou senha incorretos </small> -->
                 <p class="mt-3">Não tem acesso? Contate o administrador</p>
+                <a href="/instrucoes" class="mt-3">Clique aqui para entender como funciona o sistema</a>
               </form>
             </div>
           </div>

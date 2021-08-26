@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcryptjs');
 const HomeSchema = new mongoose.Schema({
   usuario: { type: String, required: true },
   senha: { type: String, required: true }
@@ -18,15 +18,40 @@ class Home {
        try {
         this.cleanUp();
         if(this.errors.length > 0) return;
-          this.user = await HomeModel.findOne({usuario: this.body.usuario, senha: this.body.senha});
+          this.user = await HomeModel.findOne({usuario: this.body.usuario});
           if(!this.user){
-            this.errors.push('Senha ou usuário incorretas');
+            this.errors.push('Usuário não está cadastrado');
+            return;
+          }
+
+          if(!bcrypt.compareSync(this.body.senha, this.user.senha)){
+            this.errors.push('Senha incorreta');
+            this.user = null;
             return;
           }
        } catch (error) {
-         throw new Error(error);
+        console.log(error);
+        res.render('404');
        }
       
+    }
+
+    async cadastroUser(){
+      try {
+        this.cleanUp
+        this.userExistente();
+        const salt = bcrypt.genSaltSync();
+        this.body.senha = bcrypt.hashSync(this.body.senha, salt);
+        this.user = await HomeModel.create(this.body);
+      } catch (error) {
+        console.log(error);
+        res.render('404');
+      }
+    }
+
+    async userExistente(){
+      this.user = await HomeModel.findOne({usuario: this.body.usuario});
+      if(this.user) this.errors.push('Este usuário já existe');
     }
 
 

@@ -1,0 +1,38 @@
+<%- include('includes/head'); %>
+
+
+<section class="mt-2">
+    <div class="container-fluid text-center">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 my-5 d-flex flex-column  bd-highlight" >
+                <h1 class="bd-highlight mb-4">Remover produtos ao estoque</h1>
+                <form action="/RemoverItem/Removido" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-12">
+                                <div class="my-5">
+                                    <label for="">Nome do produto</label>
+                                    <input required placeholder="Insira o nome do produto que deseja remover." name="nome_produto" type="text" class="form-control">
+                                </div>
+                                <div class="my-5">
+                                    <label for="">Quantidade do produto</label>
+                                    <input required name="quantidade" placeholder="Insira a quantidade de produtos que deseja remover." type="number" class="form-control">
+                                </div>
+                                <button class="btn btn-success mt-5 mb-4" type="submit">Remover</button>
+                                <%- include('includes/messages'); %>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<%- include('includes/footer'); %>
